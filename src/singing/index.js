@@ -1,16 +1,10 @@
 import React from 'react';
 
-const ASSET_PATH = "./singing/media/";
+const ASSET_PATH = "/singing/media/";
 
 function Item(props) {
 
   const { name, audioUrl } = props;
-
-  const [ clicked, setClicked ] = React.useState(false);
-
-  const onClick = () => {
-
-  };
 
   return (
     <div class="card">
