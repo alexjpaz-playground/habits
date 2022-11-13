@@ -4,6 +4,50 @@ let data = {};
 // https://www.fluentin3months.com/common-spanish-words/
 // while IFS= read -r line; do echo "[\"$line],"; done < in | sed 's/ – “/","/' | sed 's/”]/"]/' | pbcopy
 //
+data.phrases = {};
+
+data.phrases.common = [
+    ["Hola","Hello"],
+    ["Adiós","Goodbye"],
+    ["Por favor","Please"],
+    ["Gracias","Thank you"],
+    ["Lo siento","Sorry"],
+    ["Salud","Bless you (after someone sneezes)"],
+    ["Sí","Yes"],
+    ["No","No"],
+    ["¿Quién?","Who?"],
+    ["¿Qué?","What?"],
+    ["¿Por qué?","Why?"],
+    ["¿Dónde?","Where?"],
+    ["Buenos días","Good morning"],
+    ["Buenas tardes","Good afternoon"],
+    ["Buenas noches","Good evening"],
+    ["Hola, me llamo Juan","Hello, my name is John"],
+    ["Me llamo…","My name is…"],
+    ["¿Cómo te llamas?","What’s your name?"],
+    ["Mucho gusto","Nice to meet you"],
+    ["¿Cómo estás?","How are you?"],
+    ["Estoy bien, gracias","I’m well thank you"],
+    ["Disculpa. ¿Dónde está el baño?","Excuse me. Where is the bathroom?"],
+    ["¿Qué hora es?","What time is it?"],
+    ["¿Cómo se dice ‘concert’ en español?","How do you say ‘concert’ in Spanish?"],
+    ["Estoy perdido/a","I am lost"],
+    ["Yo no comprendo","I do not understand"],
+    ["Por favor, habla más despacio","Would you speak slower, please"],
+    ["Te extraño","I miss you"],
+    ["Te quiero","I love you"],
+    ["Despacito","Slowly"],
+    ["Mi Gente","My people"],
+    ["Bailando","Dancing"],
+    ["Bésame mucho","Kiss me a lot"],
+    ["Gasolina","Gasoline"],
+    ["La Bicicleta","The bicycle"],
+    ["Sin Pijama","Without pajamas"],
+    ["Bella","Beautiful"],
+    ["Clandestino","Clandestine or secret"],
+    ["No Me Acuerdo","I don’t remember"],
+];
+
 data.misc = {};
 
 data.misc.connectors = [

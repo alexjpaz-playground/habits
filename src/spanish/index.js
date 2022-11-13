@@ -51,7 +51,16 @@ function WordCard({ title, data }) {
     )
 }
 
-function ItemList() {
+function PhraseGenerator() {
+
+    return (
+        <div>
+            <WordCard title={"🏃‍♂️ Common phrases"} data={data.phrases.common} />
+        </div>
+    );
+}
+
+function WordGenerator() {
 
     return (
         <div>
@@ -79,10 +88,13 @@ export default function Frame() {
                 <Breadcrumbs />
                 <section className="section">
                 <h2 className="subtitle">
+                    Phrase Generators
+                </h2>
+                <PhraseGenerator />
+                <h2 className="subtitle">
                     Word Generators
                 </h2>
-
-                <ItemList />
+                <WordGenerator />
                 </section>
             </div>
         </section>
