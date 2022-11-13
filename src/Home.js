@@ -17,9 +17,7 @@ export default function Home() {
     return (
         <Frame>
             <h1 className="title">Habits</h1>
-            <button class="button is-large is-fullwidth">
-                <Link to="singing">Singing</Link>
-            </button>
+            <Link to="singing" class="button is-large is-fullwidth">Singing</Link>
         </Frame>
     );
 }
