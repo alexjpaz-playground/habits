@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 const ASSET_PATH = "/singing/media/";
+const NOOP = () => {};
 
 function Breadcrumbs() {
   return (
@@ -17,23 +18,72 @@ function Breadcrumbs() {
   );
 }
 
+function Reward() {
+  return (
+    <div>
+      <h2 className="title">
+        Select a reward
+      </h2>
+      <a className='button is-primary' href='https://www.reddit.com/r/aww/'>See a cute animal</a>
+      <a className='button is-primary' href='https://www.youtube.com/watch?v=Oc8vAvqGL_M'>Make a coffee</a>
+    </div>
+  )
+}
+
+function Sound({ audioUrl, onComplete = NOOP }) {
+
+  const audioRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if(!audioRef) return;
+
+    audioRef.current.onended = () => {
+      onComplete();
+    };
+
+    audioRef.current.ontimeupdate = () => {
+      if(audioRef.current.currentTime >= (audioRef.current.duration - 15)) {
+        onComplete();
+      }
+    };
+
+  }, [ audioRef, onComplete ]);
+
+  return (
+    <audio ref={audioRef} src={ `${ASSET_PATH}/${audioUrl}` } controls style={{"width": "100%"}} />
+  )
+}
+
 function Item(props) {
 
   const { name, audioUrl } = props;
 
+  const [ completed, setCompleted ] = React.useState(false);
+
+  let classes = "card ";
+
+  if(completed) {
+    classes += "has-background-primary ";
+  }
+
+  const onComplete = () => {
+    setCompleted(true);
+  };
+
   return (
-    <div className="card" style={{"margin-bottom":"0.5rem"}}>
+    <div className={classes} style={{"margin-bottom":"0.5rem"}}>
       <header className="card-header">
         <p className="card-header-title">{ name }</p>
       </header>
       <div className="card-content">
         <div className="content">
-          <audio src={ `${ASSET_PATH}/${audioUrl}` } controls style={{"width": "100%"}} />
+          <Sound audioUrl={audioUrl} onComplete={onComplete} />
         </div>
       </div>
     </div>
   );
 }
+
 
 function ItemList(props) {
 
@@ -110,7 +160,14 @@ function Frame() {
           Singing Habit
         </h1>
         <Breadcrumbs />
+        <p className='content'>
+          1. Sing arreggios,
+          2. Write down lyrics / phrases,
+          3. Identify vowel substitutions
+        </p>
         <ItemList items={data.items} />
+        <hr />
+        <Reward />
       </div>
     </section>
   )
