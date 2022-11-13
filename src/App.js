@@ -3,19 +3,17 @@ import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
-  Link,
 } from "react-router-dom";
 
-import Singing from './singing';
+import Home from './Home';
+
+import Singing from './Singing';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="singing">Singing</Link>
-      </div>
+      <Home />
     ),
   },
   {
