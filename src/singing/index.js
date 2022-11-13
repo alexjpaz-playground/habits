@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   Link,
@@ -30,7 +30,7 @@ function Reward() {
   )
 }
 
-function Sound({ audioUrl, onComplete = NOOP }) {
+function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
 
   const audioRef = React.useRef(null);
 
@@ -47,6 +47,14 @@ function Sound({ audioUrl, onComplete = NOOP }) {
       }
     };
 
+    audioRef.current.onplay = () => {
+      onPlay();
+    }
+
+    audioRef.current.onpause = () => {
+      onStop();
+    }
+
   }, [ audioRef, onComplete ]);
 
   return (
@@ -60,24 +68,48 @@ function Item(props) {
 
   const [ completed, setCompleted ] = React.useState(false);
 
+  const [ highlighted, setHighlighted ] = React.useState(false);
+
   let classes = "card ";
 
   if(completed) {
     classes += "has-background-primary ";
+  } else {
+    if(highlighted) {
+      classes += "has-background-success ";
+    }
   }
+
+ 
+
+  
 
   const onComplete = () => {
     setCompleted(true);
   };
 
+  const onPlay = () => {
+    setHighlighted(true);
+  };
+
+  const onStop = () => {
+    setHighlighted(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", () => {
+      setHighlighted(false);
+    });
+  }, [ setHighlighted ])
+
   return (
-    <div className={classes} style={{"margin-bottom":"0.5rem"}}>
+    <div className={classes} style={{"margin-bottom":"0.5rem"}} >
       <header className="card-header">
         <p className="card-header-title">{ name }</p>
       </header>
       <div className="card-content">
         <div className="content">
-          <Sound audioUrl={audioUrl} onComplete={onComplete} />
+          <Sound audioUrl={audioUrl} onComplete={onComplete} onPlay={onPlay} onStop={onStop} />
         </div>
       </div>
     </div>
