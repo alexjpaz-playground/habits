@@ -39,7 +39,7 @@ function Frame() {
       },
       {
         name: '"Bup" on a Triple Arpeggio - Low',
-        audioUrl: './media/"Bup" on a Triple Arpeggio - Low',
+        audioUrl: './media/Bup.mp3',
       },
       {
         name: 'Bubble Cool Down on Reverse Single Arpeggio - Low' ,
