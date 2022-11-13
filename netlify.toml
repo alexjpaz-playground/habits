@@ -1,6 +1,6 @@
 [build]
   publish = "build/"
-  command = "npm lint && npm test && npm run build"
+  command = "npm run lint && npm test && npm run build"
 
 
 [[redirects]]
