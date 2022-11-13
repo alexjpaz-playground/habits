@@ -8,6 +8,7 @@ import {
 import Home from './Home';
 
 import Singing from './singing';
+import Spanish from './spanish';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "singing",
     element: <Singing />,
+  },
+  {
+    path: "spanish",
+    element: <Spanish />,
   },
 ]);
 

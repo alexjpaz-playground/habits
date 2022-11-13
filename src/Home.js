@@ -18,6 +18,7 @@ export default function Home() {
         <Frame>
             <h1 className="title">Habits</h1>
             <Link to="singing" class="button is-large is-fullwidth">Singing</Link>
+            <Link to="spanish" class="button is-large is-fullwidth">Spanish</Link>
         </Frame>
     );
 }
