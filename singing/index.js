@@ -4,10 +4,22 @@ function Item(props) {
 
   const { name, audioUrl } = props;
 
+  const [ clicked, setClicked ] = React.useState(false);
+
+  const onClick = () => {
+
+  };
+
   return (
-    <div>
-      <h2 className="title is-6">{ name }</h2>
-      <audio src={ audioUrl } controls style={{"width": "100%"}} />
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">{ name }</p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <audio src={ audioUrl } controls style={{"width": "100%"}} />
+        </div>
+      </div>
     </div>
   );
 }
