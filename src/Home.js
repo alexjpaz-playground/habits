@@ -20,6 +20,7 @@ export default function Home() {
             <div className="buttons">
               <Link to="singing" class="button is-large is-fullwidth">Singing</Link>
               <Link to="spanish" class="button is-large is-fullwidth">Spanish</Link>
+              <Link to="journaling" class="button is-large is-fullwidth">Journaling</Link>
             </div>
         </Frame>
     );
