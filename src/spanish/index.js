@@ -86,7 +86,11 @@ export default function Frame() {
                     Spanish Habit
                 </h1>
                 <Breadcrumbs />
-                <section className="section">
+                <p className='content'>Update headlist and revisit goldlist every two weeks</p>
+                <nav>
+                    <a className='button is-link' href="https://trello.com/b/ax7ncswJ/spanish">References</a>
+                </nav>
+                <hr />
                 <h2 className="subtitle">
                     Phrase Generators
                 </h2>
@@ -95,7 +99,6 @@ export default function Frame() {
                     Word Generators
                 </h2>
                 <WordGenerator />
-                </section>
             </div>
         </section>
     )
