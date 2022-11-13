@@ -55,7 +55,7 @@ function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
       onStop();
     }
 
-  }, [ audioRef, onComplete ]);
+  }, [ audioRef, onComplete, onStop, onPlay ]);
 
   return (
     <audio ref={audioRef} src={ `${ASSET_PATH}/${audioUrl}` } controls style={{"width": "100%"}} />
