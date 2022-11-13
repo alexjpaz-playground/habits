@@ -7,7 +7,7 @@ import {
 
 import Home from './Home';
 
-import Singing from './Singing';
+import Singing from './singing';
 
 const router = createBrowserRouter([
   {
