@@ -1,18 +1,33 @@
 import React from 'react';
 
+import {
+  Link,
+} from "react-router-dom";
+
 const ASSET_PATH = "/singing/media/";
+
+function Breadcrumbs() {
+  return (
+    <nav className="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li> <Link to="/">Habits</Link></li>
+        <li className="is-active"><a href="/singing" aria-current="page">Singing</a></li>
+      </ul>
+    </nav>
+  );
+}
 
 function Item(props) {
 
   const { name, audioUrl } = props;
 
   return (
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">{ name }</p>
+    <div className="card" style={{"margin-bottom":"0.5rem"}}>
+      <header className="card-header">
+        <p className="card-header-title">{ name }</p>
       </header>
-      <div class="card-content">
-        <div class="content">
+      <div className="card-content">
+        <div className="content">
           <audio src={ `${ASSET_PATH}/${audioUrl}` } controls style={{"width": "100%"}} />
         </div>
       </div>
@@ -94,6 +109,7 @@ function Frame() {
         <h1 className="title">
           Singing Habit
         </h1>
+        <Breadcrumbs />
         <ItemList items={data.items} />
       </div>
     </section>
