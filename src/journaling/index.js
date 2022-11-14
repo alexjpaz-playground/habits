@@ -4,6 +4,8 @@ import {
   Link,
 } from "react-router-dom";
 
+import { pickRandomItemFromArray } from '../common';
+
 const data = {
   prompts: {
     values: [
@@ -288,16 +290,6 @@ function Reward() {
       <a className='button is-primary' href='https://www.youtube.com/watch?v=Oc8vAvqGL_M'>Make a coffee</a>
     </div>
   )
-}
-
-function pickRandomItemFromArray(array = [], previousValue = null) {
-  const randomElement = array[Math.floor(Math.random() * array.length)];
-
-  if(previousValue && previousValue === randomElement) {
-    return pickRandomItemFromArray(array, previousValue);
-  }
-
-  return randomElement;
 }
 
 function PromptCard({ title, data }) {
