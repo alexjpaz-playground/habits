@@ -44,7 +44,7 @@ function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
     };
 
     audioRef.current.ontimeupdate = () => {
-      if(audioRef.current.currentTime >= (audioRef.current.duration - 15)) {
+      if(audioRef.current.currentTime >= (audioRef.current.duration - 3)) {
         onComplete();
       }
     };
