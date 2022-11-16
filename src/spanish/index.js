@@ -41,9 +41,8 @@ function WordCard({ title, data }) {
                 <p className="card-header-title">{ title }</p>
             </header>
             <div className="card-content">
-                <div className="content">
-                    <h2>{noun[0]} / {noun[1]} </h2>
-
+                <div className="content is-large">
+                    <p>{noun[0]} / {noun[1]} </p>
                 </div>
             </div>
             <footer className="card-footer" onClick={onClick}>
@@ -88,9 +87,11 @@ export default function Frame() {
                     Spanish Habit
                 </h1>
                 <Breadcrumbs />
-                <p className='content'>Update headlist and revisit goldlist every two weeks</p>
+                <div className='content'>
+                    <p>Update headlist and revisit <a href='https://trello.com/c/8GPMxgbd/32-goldlist-method' className='has-text-warning'>goldlist</a> every two weeks</p>
+                </div>
                 <nav>
-                    <a className='button is-link' href="https://trello.com/b/ax7ncswJ/spanish">References</a>
+                    <a className='button' href="https://trello.com/b/ax7ncswJ/spanish">References</a>
                 </nav>
                 <hr />
                 <GoldlistDateTags />
