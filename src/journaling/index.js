@@ -330,7 +330,7 @@ export function Frame() {
     <section className="section">
       <div className="container">
         <h1 className="title">
-          Singing Habit
+          Journaling Habit
         </h1>
         <Breadcrumbs />
         <p className='content'>
@@ -338,6 +338,9 @@ export function Frame() {
           2. "I choose to",
           3. Values
         </p>
+        <div className='buttons'>
+          <a href='https://www.youtube.com/watch?v=jfKfPfyJRdk' className='button'>Open Study Music</a>
+        </div>
         <PromptCard title={"Sentence Stem Prompt"} data={data.prompts.sentence_stems} />
         <PromptCard title={"Values"} data={data.prompts.values} />
         <hr />
