@@ -4,6 +4,8 @@ import {
     Link,
 } from "react-router-dom";  
 
+import GoldlistDateTags from './GoldlistDateTags';
+
 import data from './data';
 
 function Breadcrumbs() {
@@ -90,6 +92,8 @@ export default function Frame() {
                 <nav>
                     <a className='button is-link' href="https://trello.com/b/ax7ncswJ/spanish">References</a>
                 </nav>
+                <hr />
+                <GoldlistDateTags />
                 <hr />
                 <h2 className="subtitle">
                     Phrase Generators
