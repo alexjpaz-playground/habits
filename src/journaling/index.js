@@ -4,6 +4,8 @@ import {
   Link,
 } from "react-router-dom";
 
+import Rewards from '../common/rewards';
+
 import data from './data';
 
 function Breadcrumbs() {
@@ -15,18 +17,6 @@ function Breadcrumbs() {
       </ul>
     </nav>
   );
-}
-
-function Reward() {
-  return (
-    <div>
-      <h2 className="title">
-        Select a reward
-      </h2>
-      <a className='button is-primary' href='https://www.reddit.com/r/aww/'>See a cute animal</a>
-      <a className='button is-primary' href='https://www.youtube.com/watch?v=Oc8vAvqGL_M'>Make a coffee</a>
-    </div>
-  )
 }
 
 function pickRandomItemFromArray(array = [], previousValue = null) {
@@ -83,7 +73,7 @@ export function Frame() {
         <PromptCard title={"Sentence Stem Prompt"} data={data.sentence_stems.general} />
         <PromptCard title={"Values"} data={data.prompts.values} />
         <hr />
-        <Reward />
+        <Rewards />
       </div>
     </section>
   )

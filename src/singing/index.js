@@ -4,6 +4,8 @@ import {
   Link,
 } from "react-router-dom";
 
+import Rewards from '../common/rewards';
+
 const ASSET_PATH = "/singing/media/";
 const NOOP = () => {};
 
@@ -16,20 +18,6 @@ function Breadcrumbs() {
       </ul>
     </nav>
   );
-}
-
-function Reward() {
-  return (
-    <div>
-      <h2 className="title">
-        Select a reward
-      </h2>
-      <div class='buttons'>
-        <a className='button is-primary' href='https://www.reddit.com/r/aww/'>See a cute animal</a>
-        <a className='button is-primary' href='https://www.youtube.com/watch?v=Oc8vAvqGL_M'>Make a coffee</a>
-      </div>
-    </div>
-  )
 }
 
 function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
@@ -201,7 +189,7 @@ function Frame() {
         </p>
         <ItemList items={data.items} />
         <hr />
-        <Reward />
+        <Rewards />
       </div>
     </section>
   )
