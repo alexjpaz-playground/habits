@@ -1,9 +1,15 @@
 import React from 'react';
 
-export function getDateTwoWeeksFromNow(current = new Date()) {
-    var twoWeeksFromNow = new Date();
-    twoWeeksFromNow.setDate(current.getDate() + 14);
-    return twoWeeksFromNow;
+const DAY_IN_MS = 1000 * 60 * 60 * 24;
+const TWO_WEEKS_IN_MILLISECONDS = DAY_IN_MS * 14;
+
+export function getDateFromDuration(current = null, duration = 0) {
+    var dateFromDuration = new Date(current.getTime() + duration);
+    return dateFromDuration;
+}
+
+export function getDateTwoWeeksFromNow(current = null) {
+    return getDateFromDuration(current, TWO_WEEKS_IN_MILLISECONDS);
 }
 
 export function useGoldlistDates(today = new Date()) {
@@ -11,12 +17,12 @@ export function useGoldlistDates(today = new Date()) {
     const d2 = getDateTwoWeeksFromNow(d1);
     const d3 = getDateTwoWeeksFromNow(d2);
 
-    return {
-        h: today,
+    return [
+        today,
         d1,
         d2,
         d3,
-    };
+    ];
     
 }
 
@@ -32,10 +38,11 @@ export function DateTag({ type, date }) {
 
     className = classNames[type];
 
-    const formattedDate = date.toISOString()
+    const formattedDate = date
+        .toISOString()
         .slice(0,10)
         .slice(5)
-        ;
+    ;
 
     return (
         <span className={`tag ${className} is-light`}>{ formattedDate }</span>
@@ -50,10 +57,10 @@ export default function GoldlistDateTags() {
         <div>
             <h2 className='subtitle'>Goldlist Dates</h2>
             <div className='tags'>
-                <DateTag date={dates.h} type="h" />
-                <DateTag date={dates.d1} type="d1" />
-                <DateTag date={dates.d2} type="d2" />
-                <DateTag date={dates.d3} type="d3" />
+                <DateTag date={dates[0]} type="h" />
+                <DateTag date={dates[1]} type="d1" />
+                <DateTag date={dates[2]} type="d2" />
+                <DateTag date={dates[3]} type="d3" />
             </div>
         </div>
     );
