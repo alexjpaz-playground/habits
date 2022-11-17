@@ -6,6 +6,13 @@ import {
 
 import Rewards from '../common/rewards';
 
+import data from './data';
+
+import VowelSubstitutionButton from './VowelChartButton';
+
+import VowelSubstitutionCard from './VowelSubstitutionCard';
+
+
 const ASSET_PATH = "/singing/media/";
 const NOOP = () => {};
 
@@ -118,62 +125,6 @@ function ItemList(props) {
 
 
 function Frame() {
-  const data = {
-    items: [
-      { 
-        name: "Long Scale (Warm-Ups: Bubble, Vvv, Puffy Cheeks & Cool Down) - Low",
-        audioUrl: "Bubble.mp3"
-      },
-      { 
-        name: "'Mum' on Descending 5 Tone Repeat (Low)",
-        audioUrl: "Mum.mp3"
-      },
-      {
-        name: '"Bub" on Octave Repeat - Low ',
-        audioUrl: "Bub.mp3",
-      },
-      {
-        name: '"Bup" on a Triple Arpeggio - Low',
-        audioUrl: 'Bup.mp3',
-      },
-      {
-        name: 'Bubble Cool Down on Reverse Single Arpeggio - Low' ,
-        audioUrl: "Bubble_Cooldown.mp3",
-      },
-      {
-        name: "Ugly Ah - Descending 5 Tone Repeat (Low Voices)",
-        audioUrl: "Ugly_Ah_Low.mp3"
-      },
-      {
-        name: "Ugly Ah - Descending 5 Tone Repeat (High Voices)",
-        audioUrl: "Ugly_Ah_High.mp3"
-      },
-      {
-        name: "Mmm - 5 Tone Scale (Low Voices)",
-        audioUrl: "Mmm_Low.mp3"
-      },
-      {
-        name: "Mmm 5 Tone Scale (High Voices)",
-        audioUrl: "Mmm_High.mp3"
-      },
-      {
-        name: "Goo-Koo Descending Arpeggio (Low Voices)",
-        audioUrl: "Goo-Koo_Low.mp3"
-      },
-      {
-        name: "Goo-Koo Descending Arpeggio (High Voices)",
-        audioUrl: "Goo-Koo_High.mp3"
-      },
-      {
-        name: "Gug Descending Arpeggio (Low Voices)",
-        audioUrl: "Goo-Koo_Low.mp3"
-      },
-      {
-        name: "Gug Descending Arpeggio (High Voices)",
-        audioUrl: "Goo-Koo_High.mp3"
-      },
-    ]
-  };
 
   return (
     <section className="section">
@@ -187,7 +138,11 @@ function Frame() {
           2. Write down lyrics / phrases,
           3. Identify vowel substitutions
         </p>
-        <ItemList items={data.items} />
+        <VowelSubstitutionButton />
+        <hr />
+        <ItemList items={data.practice_arpeggios} />
+        <hr />
+        <VowelSubstitutionCard />
         <hr />
         <Rewards />
       </div>
