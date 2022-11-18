@@ -8,10 +8,7 @@ import Rewards from '../common/rewards';
 
 import data from './data';
 
-import VowelSubstitutionButton from './VowelChartButton';
-
-import VowelSubstitutionCard from './VowelSubstitutionCard';
-
+import References from './References';
 
 const ASSET_PATH = "/singing/media/";
 const NOOP = () => {};
@@ -138,11 +135,10 @@ function Frame() {
           2. Write down lyrics / phrases,
           3. Identify vowel substitutions
         </p>
-        <VowelSubstitutionButton />
+        <References />
         <hr />
         <ItemList items={data.practice_arpeggios} />
-        <hr />
-        <VowelSubstitutionCard />
+
         <hr />
         <Rewards />
       </div>
