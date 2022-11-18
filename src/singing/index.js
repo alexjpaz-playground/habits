@@ -143,7 +143,8 @@ function Pagination() {
     }
   };
 
-  const numberOfPages = arrpegios.length - 1;
+  const currentPage = arrpegioIndex + 1;
+  const numberOfPages = arrpegios.length;
 
   return (
     <nav className="pagination" role="navigation" aria-label="pagination">
@@ -151,7 +152,7 @@ function Pagination() {
       <a className="pagination-next" href="#index=1" onClick={nextPage} disabled={arrpegioIndex === arrpegios.length - 1}>Next page</a>
       <ul className="pagination-list">
         <li>
-          <a className="pagination-link is-current" aria-label={`Page ${arrpegioIndex}`} href={`#arrpegioIndex={arrpegioIndex}`} aria-current="page">{arrpegioIndex}</a>
+          <a className="pagination-link is-current" aria-label={`Page ${arrpegioIndex}`} href={`#arrpegioIndex={arrpegioIndex}`} aria-current="page">{currentPage}</a>
         </li>
         <li>
           <a className="pagination-link" aria-label={`Page ${arrpegioIndex}`} href={`#arrpegioIndex={arrpegioIndex}`} aria-current="page">{numberOfPages}</a>
