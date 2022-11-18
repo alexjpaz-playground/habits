@@ -42,10 +42,10 @@ export function RudimentsCard(props) {
     return (
         <div className="box" style={{ "marginBottom": "0.5rem" }}>
             <h4 className="subtitle">{ props.title }</h4>
-            <a href={props.examples[0]} target="_blank"><RudimentsImage {... props} /></a>
+            <a href={props.examples[0]} rel="noreferrer" target="_blank"><RudimentsImage {... props} /></a>
             <div className="buttons">
                 <CheckMarkButton />
-                <a className="button" target="_blank" href={props.examples[1]}>Explanation</a>
+                <a className="button" rel="noreferrer" target="_blank" href={props.examples[1]}>Explanation</a>
             </div>
         </div>
     );
