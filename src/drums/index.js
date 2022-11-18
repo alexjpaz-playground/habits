@@ -82,13 +82,14 @@ export default function Drums() {
           </h1>
           <Breadcrumbs />
           <hr />
+          <RudimentsCardSet />
+          <hr />
           <div className="buttons">
              <a className="button is-large" href='https://vicfirth.zildjian.com/education/essential-rudiments-introduction.html'>Tier List</a>
              <a className="button is-large" href='https://vicfirth.zildjian.com/education/40-essential-rudiments.html'>Essential Rudiments</a>
              <a className="button is-large" href='https://www.40drumrudiments.com/'>Rudiments Explanations</a>
           </div>
           <hr />
-          <RudimentsCardSet />
         </div>
       </section>
     );
