@@ -21,6 +21,7 @@ export default function Home() {
               <Link to="singing" class="button is-large is-fullwidth">Singing</Link>
               <Link to="spanish" class="button is-large is-fullwidth">Spanish</Link>
               <Link to="journaling" class="button is-large is-fullwidth">Journaling</Link>
+              <Link to="drums" class="button is-large is-fullwidth">Drums</Link>
               <Link to="music" disabled class="button is-large is-fullwidth">Music</Link>
             </div>
         </Frame>
