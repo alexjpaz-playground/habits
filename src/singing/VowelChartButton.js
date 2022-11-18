@@ -4,7 +4,7 @@ export function VowelSubstitutionModal() {
     return (
         <div>
             <div className="content">
-                <img alt='vowel chart' src='/singing/images/vowels.png' />
+                <img alt='vowel chart' src='/singing/images/vowels.jpg' />
             </div>
             <p className="has-text-centered">Light to Dark</p>
             <div className="columns is-mobile">
