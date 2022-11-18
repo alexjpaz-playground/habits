@@ -10,6 +10,7 @@ import Home from './Home';
 import Singing from './singing';
 import Spanish from './spanish';
 import Journaling from './journaling';
+import Drums from './drums';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "journaling",
     element: <Journaling />,
+  },
+  {
+    path: "drums",
+    element: <Drums />
   }
 ]);
 
