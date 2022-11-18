@@ -30,16 +30,22 @@ export function CheckMarkButton(props) {
     );
 }
 
+export function RudimentsImage(props) {
+    return (
+        <img alt={props.title} src={props.imageUrl} style={{"mixBlendMode":"soft-light","border":"solid 6px white"}} />
+    );
+}
+
 export function RudimentsCard(props) {
 
 
     return (
         <div className="box" style={{ "marginBottom": "0.5rem" }}>
             <h4 className="subtitle">{ props.title }</h4>
-            <a href={props.examples[0]}><img alt={props.title} src={props.imageUrl} style={{"mixBlendMode":"soft-light"}} /></a>
+            <a href={props.examples[0]} target="_blank"><RudimentsImage {... props} /></a>
             <div className="buttons">
                 <CheckMarkButton />
-                <a className="button" href={props.examples[1]}>Explanation</a>
+                <a className="button" target="_blank" href={props.examples[1]}>Explanation</a>
             </div>
         </div>
     );
@@ -56,6 +62,11 @@ export function RudimentsCardSet() {
         )) }
         <h2 className="title">Tier Two</h2>
         { data.rudiments.filter(d => d.tier === 2).map((rudiment) => (
+            <RudimentsCard {...rudiment} />
+        )) }
+        <hr />
+         <h2 className="title">All</h2>
+        { data.rudiments_raw.map((rudiment) => (
             <RudimentsCard {...rudiment} />
         )) }
       </div>
