@@ -61,17 +61,46 @@ function PhraseGenerator() {
     );
 }
 
+function NounTabs() {
+
+    const [ currentCardIndex, setcCurrentCardIndex ] = React.useState(0);
+
+    const cards = [
+        { title: "🍎 Nouns for food", data: data.nouns.food },
+        { title: "⏰ Nouns for time", data: data.nouns.time },
+        { title: "🌍 Nouns for places", data: data.nouns.places },
+        { title: "💁‍♀️ Nouns for people", data: data.nouns.people },
+        { title: "🥁 Nouns for things", data: data.nouns.things },
+    ];
+
+    const currentCard = cards[currentCardIndex];
+
+    const onClick = (cardIndex) => (e) => {
+        e.stopPropagation();
+        setcCurrentCardIndex(cardIndex);
+    };
+
+    return (
+        <div>
+            <div className="tabs is-large is-toggle">
+                <ul>
+                    {cards.map((card, cardIndex) => (
+                        <li className={cardIndex === currentCardIndex ? "is-active" : ""} key={card.title} onClick={onClick(cardIndex)}>{ card.title }</li>
+                    ))}
+                </ul>
+            </div>
+            <NounCard {...currentCard} />
+        </div>
+    )
+}
+
 function WordGenerator() {
 
     return (
         <div>
             <WordCard title={"🏃‍♂️ Common verbs"} data={data.verbs.common} />
             <hr />
-            <NounCard title={"🍎 Nouns for food"} data={data.nouns.food} />
-            <NounCard title={"⏰ Nouns for time"} data={data.nouns.time} />
-            <NounCard title={"🌍 Nouns for places"} data={data.nouns.places} />
-            <NounCard title={"💁‍♀️ Nouns for people"} data={data.nouns.people} />
-            <WordCard tite={"🥁 Nouns for things"} data={data.nouns.things} />
+            <NounTabs />
             <hr />
             <WordCard title={"🟩 Adjectives / Adverbs"} data={data.misc.adjective_adverbs} />
             <WordCard title={"✍🏽 Connectors"} data={data.misc.connectors} />
