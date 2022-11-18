@@ -8,16 +8,40 @@ export function useData() {
     return data;
 }
 
+export function CheckMarkButton(props) {
+    const [ isChecked, setIsChecked] = React.useState(false);
+
+    const onClick = () => {
+        setIsChecked(v => true);
+    };
+
+    const classNames = ["button"];
+
+    if(isChecked) {
+        classNames.push("is-success");
+    } else {
+        classNames.push("is-info")
+    }
+
+    const className = classNames.join(" ");
+
+    return (
+        <a className={className} href="#done" onClick={onClick}>Mark Complete</a>
+    );
+}
+
 export function RudimentsCard(props) {
 
 
     return (
-        <div className="">
-            <h2 className="title"><a href={props.titleUrl}>{props.title}</a></h2>
-            <div style={{"height":"20rem"}}>
-                <iframe title={props.title} width="100%" height="100%" src={props.videoUrl} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe>
+        <div className="box" style={{ "marginBottom": "0.5rem" }}>
+            <h4 className="subtitle">{ props.title }</h4>
+            <a href={props.examples[0]}><img alt={props.title} src={props.imageUrl} style={{"mixBlendMode":"soft-light"}} /></a>
+            <div className="buttons">
+                <CheckMarkButton />
+                <a className="button" href={props.examples[1]}>Explanation</a>
             </div>
-      </div>
+        </div>
     );
 }
 
@@ -26,7 +50,12 @@ export function RudimentsCardSet() {
 
     return (
       <div className="">
-        { data.rudiments.map((rudiment) => (
+        <h2 className="title">Tier One</h2>
+        { data.rudiments.filter(d => d.tier === 1).map((rudiment) => (
+            <RudimentsCard {...rudiment} />
+        )) }
+        <h2 className="title">Tier Two</h2>
+        { data.rudiments.filter(d => d.tier === 2).map((rudiment) => (
             <RudimentsCard {...rudiment} />
         )) }
       </div>
@@ -43,9 +72,9 @@ export default function Drums() {
           <Breadcrumbs />
           <hr />
           <div className="buttons">
-             <a className="button is-large" href='https://trello.com/c/ZEF8DZaV/137-learn-to-drum'>Trello Board</a>
-             <a className="button is-large" href='https://vicfirth.zildjian.com/education/40-essential-rudiments.html'>Rudiments (vic)</a>
-             <a className="button is-large" href='https://www.40drumrudiments.com/'>Rudiments (vic)</a>
+             <a className="button is-large" href='https://vicfirth.zildjian.com/education/essential-rudiments-introduction.html'>Tier List</a>
+             <a className="button is-large" href='https://vicfirth.zildjian.com/education/40-essential-rudiments.html'>Essential Rudiments</a>
+             <a className="button is-large" href='https://www.40drumrudiments.com/'>Rudiments Explanations</a>
           </div>
           <hr />
           <RudimentsCardSet />
