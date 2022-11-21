@@ -28,7 +28,7 @@ function WordCard({ title, data }) {
             </header>
             <div className="card-content">
                 <div className="content is-large">
-                    <p>{noun[0]} / {noun[1]} </p>
+                    <p><a href={`https://www.spanishdict.com/translate/${noun[0]}`}>{noun[0]}</a> / {noun[1]} </p>
                 </div>
             </div>
             <footer className="card-footer" onClick={onClick}>
