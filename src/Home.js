@@ -22,7 +22,7 @@ export default function Home() {
               <Link to="spanish" className="button is-large is-fullwidth">Spanish</Link>
               <Link to="journaling" className="button is-large is-fullwidth">Journaling</Link>
               <Link to="drums" className="button is-large is-fullwidth">Drums</Link>
-              <Link to="music" disabled className="button is-large is-fullwidth">Music</Link>
+              <Link to="piano" className="button is-large is-fullwidth">Piano</Link>
             </div>
         </Frame>
     );
