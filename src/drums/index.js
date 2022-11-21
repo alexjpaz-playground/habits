@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Breadcrumbs } from "./Breadcrumbs";
+import { HabitHeader } from "../common/HabitHeader";
 
 import data from "./data";
 
@@ -77,11 +77,11 @@ export default function Drums() {
     return (
         <section className="section">
         <div className="container">
-          <h1 className="title">
-            Drumming Habit
-          </h1>
-          <Breadcrumbs />
-          <hr />
+            <HabitHeader title={"Drums"} path={"/drums"} description={(
+                <div>
+                    <p>Just Drum bro!</p>
+                </div>
+            )} />
           <RudimentsCardSet />
           <hr />
           <div className="buttons">

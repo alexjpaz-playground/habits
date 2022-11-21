@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 
-import { Link } from "react-router-dom";
+import { HabitHeader } from '../common/HabitHeader';
 
 import Rewards from '../common/rewards';
 
@@ -12,17 +12,6 @@ import SingingHabitContext from './SingingHabitContext';
 
 const ASSET_PATH = "/singing/media/";
 const NOOP = () => { };
-
-function Breadcrumbs() {
-  return (
-    <nav className="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li> <Link to="/">Habits</Link></li>
-        <li className="is-active"><a href="/singing" aria-current="page">Singing</a></li>
-      </ul>
-    </nav>
-  );
-}
 
 function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
 
@@ -202,15 +191,9 @@ function Frame() {
     <SingingHabitContextProvider>
       <section className="section">
         <div className="container">
-          <h1 className="title">
-            Singing Habit
-          </h1>
-          <Breadcrumbs />
-          <p className='content'>
-            1. Sing arreggios,
-            2. Write down lyrics / phrases,
-            3. Identify vowel substitutions
-          </p>
+          <HabitHeader title={"Singing"} path={"/singing"} description={`
+            1. Sing arreggios, 2. Write down lyrics / phrases, 3. Identify vowel substitutions
+          `} />
           <References />
           <hr />
           <ItemList />
