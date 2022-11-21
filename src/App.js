@@ -11,6 +11,7 @@ import Singing from './singing';
 import Spanish from './spanish';
 import Journaling from './journaling';
 import Drums from './drums';
+import { Footer } from './Footer';
 
 const router = createBrowserRouter([
   {
@@ -37,10 +38,12 @@ const router = createBrowserRouter([
   }
 ]);
 
-
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div>
+      <RouterProvider router={router} />
+      <Footer />
+    </div>
   );
 }
 
