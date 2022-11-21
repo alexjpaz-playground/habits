@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 
 import { Link } from "react-router-dom";
+import { HabitHeader } from '../common/HabitHeader';
 
 import Rewards from '../common/rewards';
 
@@ -202,15 +203,9 @@ function Frame() {
     <SingingHabitContextProvider>
       <section className="section">
         <div className="container">
-          <h1 className="title">
-            Singing Habit
-          </h1>
-          <Breadcrumbs />
-          <p className='content'>
-            1. Sing arreggios,
-            2. Write down lyrics / phrases,
-            3. Identify vowel substitutions
-          </p>
+          <HabitHeader title={"Singing"} path={"/singing"} description={`
+            1. Sing arreggios, 2. Write down lyrics / phrases, 3. Identify vowel substitutions
+          `} />
           <References />
           <hr />
           <ItemList />

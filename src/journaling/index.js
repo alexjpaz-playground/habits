@@ -1,23 +1,12 @@
 import React from 'react';
 
-import {
-  Link,
-} from "react-router-dom";
 
 import Rewards from '../common/rewards';
 
-import data from './data';
+import { Breadcrumbs } from '../common/Breadcrumbs';
+import { HabitHeader } from '../common/HabitHeader';
 
-function Breadcrumbs() {
-  return (
-    <nav className="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li> <Link to="/">Habits</Link></li>
-        <li className="is-active"><a href="/journaling" aria-current="page">Journaling</a></li>
-      </ul>
-    </nav>
-  );
-}
+import data from './data';
 
 function pickRandomItemFromArray(array = [], previousValue = null) {
   const randomElement = array[Math.floor(Math.random() * array.length)];
@@ -57,15 +46,11 @@ export function Frame() {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="title">
-          Journaling Habit
-        </h1>
-        <Breadcrumbs />
-        <p className='content'>
+        <HabitHeader title={"Journaling"} path={"/journaling"} description={`
           1. Sentence stems,
           2. "I choose to",
-          3. Values
-        </p>
+          3. Values`
+        } />
         <div className='buttons'>
           <a href='https://www.youtube.com/watch?v=jfKfPfyJRdk' className='button'>Open Study Music</a>
         </div>

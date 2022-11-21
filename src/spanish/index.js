@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";  
 
 import GoldlistDateTags from './GoldlistDateTags';
+import { HabitHeader } from '../common/HabitHeader';
 
 import data from './data';
 
@@ -83,17 +84,14 @@ export default function Frame() {
     return (
         <section className="section">
             <div className="container">
-                <h1 className="title">
-                    Spanish Habit
-                </h1>
-                <Breadcrumbs />
-                <div className='content'>
-                    <p>Update headlist and revisit <a href='https://trello.com/c/8GPMxgbd/32-goldlist-method' className='has-text-warning'>goldlist</a> every two weeks</p>
-                </div>
-                <nav>
-                    <a className='button' href="https://trello.com/b/ax7ncswJ/spanish">References</a>
-                </nav>
-                <hr />
+                <HabitHeader title={"Spanish"} path={"/Spanish"} description={(
+                    <div>
+                        <p>Update headlist and revisit <a href='https://trello.com/c/8GPMxgbd/32-goldlist-method' className='has-text-warning'>goldlist</a> every two weeks</p>
+                        <div className='buttons'>
+                            <a className='button' href="https://trello.com/b/ax7ncswJ/spanish">References</a>
+                        </div>
+                    </div>
+                )} />
                 <GoldlistDateTags />
                 <hr />
                 <h2 className="subtitle">
