@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Breadcrumbs } from "./Breadcrumbs"
 
 export function HabitDescriptionModal({ children, showModal = false, setShowModal = () => {}}) {

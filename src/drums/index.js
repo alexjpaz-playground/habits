@@ -1,8 +1,6 @@
 import React from "react";
 
 import { HabitHeader } from "../common/HabitHeader";
-import { Breadcrumbs } from "./Breadcrumbs";
-
 
 import data from "./data";
 

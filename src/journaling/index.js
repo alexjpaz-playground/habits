@@ -1,9 +1,7 @@
 import React from 'react';
 
-
 import Rewards from '../common/rewards';
 
-import { Breadcrumbs } from '../common/Breadcrumbs';
 import { HabitHeader } from '../common/HabitHeader';
 
 import data from './data';
