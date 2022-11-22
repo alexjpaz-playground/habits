@@ -11,6 +11,7 @@ import References from './References';
 import SingingHabitContext from './SingingHabitContext';
 
 const ASSET_PATH = "/singing/media/";
+
 const NOOP = () => { };
 
 function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
