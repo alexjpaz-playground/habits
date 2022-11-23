@@ -59,13 +59,17 @@ data.practice_arpeggios = [
       audioUrl: "nebula_scales/baritone/Circular 5th Major - D3 to G4 - Baritone.mp3",
     },
     {
-      name: "Hnnng -> EE -> MM (Baritenor)",
-      audioUrl: "nebula_scales/baritenor/Circular 5th Major - F3 to Bb4 - Baritenor.mp3",
-    },
-    {
       name: "Hnnng -> EE -> MM (Tenor)",
       audioUrl: "nebula_scales/tenor/Circular 5th Major - G3 to C5 - Tenor.mp3",
     },
+    {
+      name: "Siren (Baritone)",
+      audioUrl: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3",
+    },
+    {
+      name: "Siren (Tenor)",
+      audioUrl: "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3",
+    }
   ]
 
 data.common_words_by_usage = [
