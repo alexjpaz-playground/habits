@@ -12,6 +12,7 @@ import Spanish from './spanish';
 import Journaling from './journaling';
 import Drums from './drums';
 import { Footer } from './Footer';
+import PianoHabit from './piano';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "drums",
     element: <Drums />
+  },
+  {
+    path: "piano",
+    element: <PianoHabit />
   }
 ]);
 
