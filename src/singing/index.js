@@ -184,7 +184,11 @@ function SingingHabitContextProvider({ children }) {
   )
 }
 
+
+
 function Frame() {
+
+  const SINGING_PLAYLIST_URL = 'https://music.youtube.com/playlist?list=PLBsbOw7xrqWMYUnXANFeOer-8pS2q1eU4&feature=share';
 
   return (
     <SingingHabitContextProvider>
@@ -202,6 +206,7 @@ function Frame() {
               <p>Bubble, VVV, Puffy cheeks, Raspberry</p>
               <p>Bub, Bup, Goo/Koo, Gug</p>
               <p>Hnng → EE → Mmm</p>
+              <a href={SINGING_PLAYLIST_URL} className='button'>Singing playlist</a>
             </div>
           )} />
           <References />
