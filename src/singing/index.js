@@ -5,44 +5,14 @@ import { HabitHeader } from '../common/HabitHeader';
 import data from './data';
 
 import References from './References';
+import { ScaleCard } from './ScaleCard';
 
 import SingingHabitContext from './SingingHabitContext';
+import { Sound } from './Sound';
 
-const ASSET_PATH = "/singing/media/";
+export const ASSET_PATH = "/singing/media/";
 
-const NOOP = () => { };
-
-function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
-
-  const audioRef = React.useRef(null);
-
-  React.useEffect(() => {
-    if (!audioRef) return;
-
-    audioRef.current.onended = () => {
-      onComplete();
-    };
-
-    audioRef.current.ontimeupdate = () => {
-      if (audioRef.current.currentTime >= (audioRef.current.duration - 3)) {
-        onComplete();
-      }
-    };
-
-    audioRef.current.onplay = () => {
-      onPlay();
-    }
-
-    audioRef.current.onpause = () => {
-      onStop();
-    }
-
-  }, [audioRef, onComplete, onStop, onPlay]);
-
-  return (
-    <audio ref={audioRef} src={`${ASSET_PATH}/${audioUrl}`} controls style={{ "width": "100%" }} />
-  )
-}
+export const NOOP = () => { };
 
 function Item(props) {
 
@@ -206,6 +176,10 @@ function Frame() {
               <p>Bubble, VVV, Puffy cheeks, Raspberry</p>
               <p>Bub, Bup, Goo/Koo, Gug</p>
               <p>Hnng → EE → Mmm</p>
+              <h4>Scales (Solfege)</h4>
+              <p>Major Scale 1 (Doh) 2 (Re) 3 (Mi) 4 (Fa) 5 (Sol) 6 (La) 7 (Ti)</p>
+              <p>Natural Minor Progression: 6 (Low La) 7 (Low Ti) 1 (Doh) 2 (Re) 3 (Mi) 4 (Fa) 5 (Sol) 6 (La)</p>
+              
               <a href={SINGING_PLAYLIST_URL} className='button'>Singing playlist</a>
             </div>
           )} />
@@ -214,6 +188,8 @@ function Frame() {
           <ItemList />
           <Pagination />
           <hr />
+          <ScaleCard name={"Baritone Scales"} scales={data.scales.baritone} />
+          <ScaleCard name={"Tenor Scales"} scales={data.scales.tenor} />
         </div>
       </section>
     </SingingHabitContextProvider>
