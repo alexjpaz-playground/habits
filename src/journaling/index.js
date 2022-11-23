@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Rewards from '../common/rewards';
-
 import { HabitHeader } from '../common/HabitHeader';
 
 import data from './data';
@@ -55,8 +53,6 @@ export function Frame() {
         <PromptCard title={"Six Pillars Sentence Stem Prompt"} data={data.sentence_stems.six_pillars} />
         <PromptCard title={"Sentence Stem Prompt"} data={data.sentence_stems.general} />
         <PromptCard title={"Values"} data={data.prompts.values} />
-        <hr />
-        <Rewards />
       </div>
     </section>
   )
