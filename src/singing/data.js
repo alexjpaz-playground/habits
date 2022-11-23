@@ -1,8 +1,9 @@
+
 const data = {}
 
 data.practice_arpeggios = [
     { 
-      name: "Long Scale (Warm-Ups: Bubble, Vvv, Puffy Cheeks & Cool Down) - Low",
+      name: "Long Scale (Warm-Ups: Bubble, Vvv, Puffy Cheeks, Raspberry & Cool Down) - Low",
       audioUrl: "Bubble.mp3"
     },
     { 
@@ -53,6 +54,22 @@ data.practice_arpeggios = [
       name: "Gug Descending Arpeggio (High Voices)",
       audioUrl: "Goo-Koo_High.mp3"
     },
+    {
+      name: "Hnnng -> EE -> MM (Baritone)",
+      audioUrl: "nebula_scales/baritone/Circular 5th Major - D3 to G4 - Baritone.mp3",
+    },
+    {
+      name: "Hnnng -> EE -> MM (Tenor)",
+      audioUrl: "nebula_scales/tenor/Circular 5th Major - G3 to C5 - Tenor.mp3",
+    },
+    {
+      name: "Siren (Baritone)",
+      audioUrl: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3",
+    },
+    {
+      name: "Siren (Tenor)",
+      audioUrl: "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3",
+    }
   ]
 
 data.common_words_by_usage = [

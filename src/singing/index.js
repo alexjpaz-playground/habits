@@ -2,8 +2,6 @@ import React, { useEffect, useContext, useState } from 'react';
 
 import { HabitHeader } from '../common/HabitHeader';
 
-import Rewards from '../common/rewards';
-
 import data from './data';
 
 import References from './References';
@@ -11,6 +9,7 @@ import References from './References';
 import SingingHabitContext from './SingingHabitContext';
 
 const ASSET_PATH = "/singing/media/";
+
 const NOOP = () => { };
 
 function Sound({ audioUrl, onComplete = NOOP, onPlay = NOOP, onStop = NOOP }) {
@@ -191,15 +190,25 @@ function Frame() {
     <SingingHabitContextProvider>
       <section className="section">
         <div className="container">
-          <HabitHeader title={"Singing"} path={"/singing"} description={`
-            1. Sing arreggios, 2. Write down lyrics / phrases, 3. Identify vowel substitutions
-          `} />
+          <HabitHeader title={"Singing"} path={"/singing"} description={(
+            <div>
+              <h4>Habit Outline</h4>
+              <ol>
+                <li>Sing arreggios</li>
+                <li>Write down lyrics / phrases</li>
+                <li>Identify vowel substitutions</li>
+              </ol>
+              <h4>Excercises</h4>
+              <p>Bubble, VVV, Puffy cheeks, Raspberry</p>
+              <p>Bub, Bup, Goo/Koo, Gug</p>
+              <p>Hnng → EE → Mmm</p>
+            </div>
+          )} />
           <References />
           <hr />
           <ItemList />
           <Pagination />
           <hr />
-          <Rewards />
         </div>
       </section>
     </SingingHabitContextProvider>
