@@ -3,6 +3,8 @@ import {
     Link,
 } from "react-router-dom";
 
+import * as React from 'react';
+
 function Frame({ children }) {
     return (
         <section className="section">
