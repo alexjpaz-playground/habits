@@ -5,7 +5,7 @@ import { HabitHeader } from '../common/HabitHeader';
 import data from './data';
 
 import References from './References';
-import { ScaleCard } from './ScaleCard';
+import { ScalesSection } from './ScalesSection';
 
 import SingingHabitContext from './SingingHabitContext';
 import { Sound } from './Sound';
@@ -154,8 +154,6 @@ function SingingHabitContextProvider({ children }) {
   )
 }
 
-
-
 function Frame() {
 
   const SINGING_PLAYLIST_URL = 'https://music.youtube.com/playlist?list=PLBsbOw7xrqWMYUnXANFeOer-8pS2q1eU4&feature=share';
@@ -176,7 +174,7 @@ function Frame() {
               <p>Bubble, VVV, Puffy cheeks, Raspberry</p>
               <p>Bub, Bup, Goo/Koo, Gug</p>
               <p>Hnng → EE → Mmm</p>
-              <h4><a href='https://trello.com/1/cards/637e6f3200e3d000f45044f4/attachments/637e6f370b33f5038bf21bd5/previews/637e6f380b33f5038bf21be1/download/image.png'>Scales (Solfege)</a></h4>
+              <h4><a href='/singing/images/solfege.png'>Scales (Solfege)</a></h4>
               <p>Major Scale 1 (Doh) 2 (Re) 3 (Mi) 4 (Fa) 5 (Sol) 6 (La) 7 (Ti)</p>
               <p>Natural Minor Progression: 6 (Low La) 7 (Low Ti) 1 (Doh) 2 (Re) 3 (Mi) 4 (Fa) 5 (Sol) 6 (La)</p>
               
@@ -188,8 +186,7 @@ function Frame() {
           <ItemList />
           <Pagination />
           <hr />
-          <ScaleCard name={"Baritone Scales"} scales={data.scales.baritone} />
-          <ScaleCard name={"Tenor Scales"} scales={data.scales.tenor} />
+          <ScalesSection />
         </div>
       </section>
     </SingingHabitContextProvider>

@@ -41,7 +41,16 @@ export default function VowelSubstitutionButton() {
 
     return (
         <div>
-            <button className="button" onClick={onClick}>Open Vowel Chart</button>
+            <div className="dropdown is-active">
+                <div className="dropdown-trigger">
+                <button className="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={onClick}>
+                    <span>View Vowel Chart</span>
+                    <span className="icon is-small">
+                    <i className="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+                </div>
+            </div>
             {displayModal && <VowelSubstitutionModal />}
         </div>
     )
