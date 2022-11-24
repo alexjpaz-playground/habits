@@ -39,7 +39,12 @@ export function HabitHeader({ title, path, description }) {
         <div>
             <h1 className="title">
                 <span>{title} Habit </span>
-                <button className="button is-rounded" onClick={onClick}>?</button>
+                
+                <div className="is-pulled-right has-text-grey-light" onClick={onClick}>
+                    <span className="icon">
+                        <i className="fas fa-circle-question"></i>
+                    </span>
+                </div>
             </h1>
             <Breadcrumbs title={title} path={path} />
             <HabitDescriptionModal setShowModal={setShowModal} showModal={showModal}>
