@@ -1,14 +1,3 @@
-const data = {
-  scales: [
-    {
-      "name": "C Major Scale",
-      "linkUrl": "",
-    }
-
-  ]
-};
-
-
 export default function ScaleCard() {
 
   const onClick = () => {

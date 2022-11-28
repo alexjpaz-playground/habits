@@ -1,5 +1,4 @@
 import { HabitHeader } from "../common/HabitHeader";
-import ScaleCard from "./ScaleCard";
 
 export function Description() {
   return (
