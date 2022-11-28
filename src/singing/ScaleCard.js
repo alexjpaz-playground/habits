@@ -6,7 +6,7 @@ export function useScaleCardContext() {
 
 }
 
-export function ScaleCard({ name, scales }) {
+export function ScaleCard({ name, scales = [] }) {
 
   const [ scaleIndex, setScaleIndex ] = useState(0);
 
@@ -17,12 +17,12 @@ export function ScaleCard({ name, scales }) {
   };
 
   return (
-    <div className={"card"} style={{ "margin-bottom": "0.5rem" }}>
-      <header className="card-header">
-        <p className="card-header-title">{ name }</p>
+    <div >
+      <header>
+        <h2>{ name }</h2>
       </header>
-      <div className="card-content">
-        <div className="content">
+      <div>
+        <div>
           <div class="field">
             <div class="control">
               <div class="select">

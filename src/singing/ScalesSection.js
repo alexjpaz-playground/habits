@@ -2,32 +2,49 @@ import React from 'react';
 import data from './data';
 import { ScaleCard } from './ScaleCard';
 
+const SCALES = {
+  tenor: {
+    label: "Tenor",
+    scales: data.scales.tenor,
+  },
+  baritone: {
+    label: "Baritone",
+    scales: data.scales.baritone,
+  },
+}
+
+
+export function ScalesSelect({ onChange = () => {} }) {
+  
+  return (
+    <div class="field">
+      <div class="control">
+        <div class="select">
+          <select onChange={onChange}>
+            {Object.keys(SCALES).map((scale) => (
+              <option key={scale}>{scale}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export function ScalesSection() {
 
-  const [displayModal, setDisplayModal] = React.useState(false);
+  const [ scales, setScales ] = React.useState(SCALES.tenor);
 
-  const onClick = () => {
-    setDisplayModal(c => !c);
+  const onChange = (e) => {
+    const key = e.target.value;
+
+    setScales(SCALES[key]);
   };
 
   return (
     <div>
-      <div className="dropdown is-active">
-        <div className="dropdown-trigger">
-          <button className="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={onClick}>
-            <span>View More Scales</span>
-            <span className="icon is-small">
-              <i className="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-      </div>
-      {displayModal &&
-        <>
-          <ScaleCard name={"Baritone Scales"} scales={data.scales.baritone} />
-          <ScaleCard name={"Tenor Scales"} scales={data.scales.tenor} />
-        </>}
+      <ScalesSelect onChange={onChange} />
+      <ScaleCard name={`${scales.label} Scales`} scales={scales.scales} />
     </div>
   );
 }
