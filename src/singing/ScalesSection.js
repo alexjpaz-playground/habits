@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 import data from './data';
+
 import { ScaleCard } from './ScaleCard';
+import { ScaleSectionPagination } from './ScaleSectionPagination';
+import { ScalesSectionContextProvider } from './ScalesSectionContextProvider';
+import ScalesSectionContext from './ScalesSectionContext';
 
-const SCALES = {
-  tenor: {
-    label: "Tenor",
-    scales: data.scales.tenor,
-  },
-  baritone: {
-    label: "Baritone",
-    scales: data.scales.baritone,
-  },
-}
+export function ScalesSelect() {
 
+  const ctx = useContext(ScalesSectionContext);
 
-export function ScalesSelect({ onChange = () => {} }) {
+  const onChange = (e) => {
+    const key = e.target.value;
+
+    ctx.setScales(data.scales[key].scales);
+    ctx.setScaleIndex(0);
+  };
   
   return (
     <div class="field">
-      <div class="control">
-        <div class="select">
+      <div class="control ">
+        <div class="select is-info is-fullwidth">
           <select onChange={onChange}>
-            {Object.keys(SCALES).map((scale) => (
+            {Object.keys(data.scales).map((scale) => (
               <option key={scale}>{scale}</option>
             ))}
           </select>
@@ -33,18 +35,17 @@ export function ScalesSelect({ onChange = () => {} }) {
 
 export function ScalesSection() {
 
-  const [ scales, setScales ] = React.useState(SCALES.tenor);
-
-  const onChange = (e) => {
-    const key = e.target.value;
-
-    setScales(SCALES[key]);
-  };
-
+  const [ scales, setScales ] = React.useState(data.scales.guided);
+  
   return (
     <div>
-      <ScalesSelect onChange={onChange} />
-      <ScaleCard name={`${scales.label} Scales`} scales={scales.scales} />
+      <ScalesSectionContextProvider>
+        <h2 className='subtitle'>Scales</h2>
+        <ScalesSelect />
+        <ScaleCard name={`${scales.label} Scales`} scales={scales.scales} />
+        <br />
+        <ScaleSectionPagination />
+      </ScalesSectionContextProvider>
     </div>
   );
 }
