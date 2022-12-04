@@ -50,6 +50,15 @@ export function PianoHabit() {
 
         <h4 className="subtitle">Chords</h4>
         <img alt="chords" src="/piano/images/chords-constellations.png"></img>
+        <p>Forumlas</p>
+        <dl>
+          <dt>Major</dt>
+          <dd>1-3-5</dd>
+
+          <dt>Minor</dt>
+          <dd>1-b3-5</dd>
+        </dl>
+
         <dl>
           <dt>All White Keys</dt>
           <dd>C F G</dd>
@@ -85,11 +94,21 @@ export function PianoHabit() {
         </div>
 
         <h4 className="subtitle">Arrpeggios</h4>
-        C, F, G, Bb, and Eb,
 
+        <p>C Arpeggio</p>
         <img alt="scale" src="https://www.pianoscales.org/images/arpeggio_C.png" />
+
+        <p>G Arpeggio</p>
         <img alt="scale" src="https://www.pianoscales.org/images/arpeggio_G.png" />
+
+        <p>F Arpeggio</p>
         <img alt="scale" src="https://www.pianoscales.org/images/arpeggio_F.png" />
+
+        <p>Bb Arpeggio</p>
+        <img alt="scale" src="https://www.pianoscales.org/images/arpeggio_Bb.png" />
+
+        <p>Eb Arpeggio</p>
+        <img alt="scale" src="https://www.pianoscales.org/images/arpeggio_Eb.png" />
 
         <div className="buttons">
           <a className="button" href="  https://www.pianoscales.org/major-arpeggios.html">Major Scale Arrpeggios</a>
