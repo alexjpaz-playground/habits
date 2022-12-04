@@ -35,7 +35,7 @@ export function ScalesSelect() {
 
 export function ScalesSection() {
 
-  const [ scales, setScales ] = React.useState(data.scales.guided);
+  const [ scales ] = React.useState(data.scales.guided);
   
   return (
     <div>
