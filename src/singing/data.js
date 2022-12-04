@@ -8,6 +8,10 @@ data.scales = {
       { label: "2. Mum", value: "Mum.mp3" },
       { label: "3. Bub", value: "Bub.mp3" },
       { label: "4. Bup", value: "Bup.mp3" },
+      { label: "5. Nnng-EE-Mmm", value: "Mmm_Low.mp3" },
+      { label: "6. Gug", value: "Goo-Koo_Low.mp3" },
+      { label: "7. Siren", value: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3", }
+
     ]
   },
   tenor: {
