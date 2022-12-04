@@ -1,40 +1,38 @@
-import React, { useState } from 'react';
+import React, { useContext  } from 'react';
 
 import { Sound } from "./Sound";
 
-export function useScaleCardContext() {
+import ScalesSectionContext from './ScalesSectionContext';
 
-}
+export function ScaleCard({ name }) {
 
-export function ScaleCard({ name, scales }) {
+  const ctx = useContext(ScalesSectionContext);
 
-  const [ scaleIndex, setScaleIndex ] = useState(0);
+  let currentScale = ctx.scales[ctx.scaleIndex];
 
-  const currentScale = scales[scaleIndex];
+  
 
   const onChange = (e) => {
-    setScaleIndex(e.target.selectedIndex);
+    ctx.setScaleIndex(e.target.selectedIndex);
   };
 
   return (
-    <div className={"card"} style={{ "margin-bottom": "0.5rem" }}>
-      <header className="card-header">
-        <p className="card-header-title">{ name }</p>
-      </header>
-      <div className="card-content">
-        <div className="content">
-          <div class="field">
-            <div class="control">
-              <div class="select">
-                <select onChange={onChange}>
-                  { scales.map((scale) => (
-                    <option>{scale.replace(/nebula_scales\/(tenor|baritone)\//, "")}</option>
+    <div >
+      <div>
+        <div>
+          <div className="field">
+            <div className="control">
+              <div className="select is-fullwidth">
+                <select onChange={onChange} value={currentScale.value}>
+                  { ctx.scales.map((item) => (
+
+                    <option key={item.label} value={ item.value } selecte>{ item.label }</option>
                   ))}
                 </select>
               </div>
             </div>
           </div>
-          <Sound audioUrl={currentScale} />
+          <Sound audioUrl={currentScale.value} />
         </div>
       </div>
     </div>

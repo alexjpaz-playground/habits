@@ -1,33 +1,51 @@
-import React from 'react';
-import data from './data';
-import { ScaleCard } from './ScaleCard';
+import React, { useContext } from 'react';
 
+import data from './data';
+
+import { ScaleCard } from './ScaleCard';
+import { ScaleSectionPagination } from './ScaleSectionPagination';
+import { ScalesSectionContextProvider } from './ScalesSectionContextProvider';
+import ScalesSectionContext from './ScalesSectionContext';
+
+export function ScalesSelect() {
+
+  const ctx = useContext(ScalesSectionContext);
+
+  const onChange = (e) => {
+    const key = e.target.value;
+
+    ctx.setScales(data.scales[key].scales);
+    ctx.setScaleIndex(0);
+  };
+  
+  return (
+    <div class="field">
+      <div class="control ">
+        <div class="select is-info is-fullwidth">
+          <select onChange={onChange}>
+            {Object.keys(data.scales).map((scale) => (
+              <option key={scale}>{scale}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export function ScalesSection() {
 
-  const [displayModal, setDisplayModal] = React.useState(false);
-
-  const onClick = () => {
-    setDisplayModal(c => !c);
-  };
-
+  const [ scales ] = React.useState(data.scales.guided);
+  
   return (
     <div>
-      <div className="dropdown is-active">
-        <div className="dropdown-trigger">
-          <button className="button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={onClick}>
-            <span>View More Scales</span>
-            <span className="icon is-small">
-              <i className="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-      </div>
-      {displayModal &&
-        <>
-          <ScaleCard name={"Baritone Scales"} scales={data.scales.baritone} />
-          <ScaleCard name={"Tenor Scales"} scales={data.scales.tenor} />
-        </>}
+      <ScalesSectionContextProvider>
+        <h2 className='subtitle'>Scales</h2>
+        <ScalesSelect />
+        <ScaleCard name={`${scales.label} Scales`} scales={scales.scales} />
+        <br />
+        <ScaleSectionPagination />
+      </ScalesSectionContextProvider>
     </div>
   );
 }

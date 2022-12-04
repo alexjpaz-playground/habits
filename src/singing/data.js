@@ -2,46 +2,62 @@
 const data = {}
 
 data.scales = {
-  tenor: [
-    "nebula_scales/tenor/Arpeggio Octave Major - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Arpeggio Octave Minor - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Circular 5th Major - G3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Circular 5th Minor - G3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Circular 9th Major - F3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Circular 9th Minor - F3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Looper 1-Octave Chromatic - C3 to C4 - Tenor bottom.mp3",
-    "nebula_scales/tenor/Looper 1-Octave Chromatic - C4 to C5 - Tenor top.mp3",
-    "nebula_scales/tenor/Looper 2-Octave Chromatic - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Pentatonic 12th Major - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Pentatonic 12th Minor - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Standard 5th Major - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Standard 5th Minor - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Standard 9th Major - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Standard 9th Minor - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Standard Octave Chromatic - C3 to C5 - Tenor.mp3",
-    "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3",
-  ],
-  baritone: [
-    "nebula_scales/baritone/Arpeggio Octave Major - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Arpeggio Octave Minor - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Circular 5th Major - D3 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Circular 5th Minor - D3 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Circular 9th Major - C3 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Circular 9th Minor - C3 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Looper 1-Octave Chromatic - G2 to G3 - Baritone bottom.mp3",
-    "nebula_scales/baritone/Looper 1-Octave Chromatic - G3 to G4 - Baritone top.mp3",
-    "nebula_scales/baritone/Looper 2-Octave Chromatic - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Pentatonic 12th Major - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Pentatonic 12th Minor - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Standard 5th Major - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Standard 5th Minor - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Standard 9th Major - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Standard 9th Minor - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Standard Octave Chromatic - G2 to G4 - Baritone.mp3",
-    "nebula_scales/baritone/Unison - G2 to G4 - Baritone.mp3",  
-  ]
+  guided: {
+    scales: [
+      { label: "1. Bubble, VVV, Puffycheeks, Raspberry", value: "Bubble.mp3" },
+      { label: "2. Mum", value: "Mum.mp3" },
+      { label: "3. Bub", value: "Bub.mp3" },
+      { label: "4. Bup", value: "Bup.mp3" },
+      { label: "5. Nnng-EE-Mmm", value: "Mmm_Low.mp3" },
+      { label: "6. Gug", value: "Goo-Koo_Low.mp3" },
+      { label: "7. Siren", value: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3", }
+
+    ]
+  },
+  tenor: {
+    scales: [
+      "nebula_scales/tenor/Arpeggio Octave Major - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Arpeggio Octave Minor - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Circular 5th Major - G3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Circular 5th Minor - G3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Circular 9th Major - F3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Circular 9th Minor - F3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Looper 1-Octave Chromatic - C3 to C4 - Tenor bottom.mp3",
+      "nebula_scales/tenor/Looper 1-Octave Chromatic - C4 to C5 - Tenor top.mp3",
+      "nebula_scales/tenor/Looper 2-Octave Chromatic - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Pentatonic 12th Major - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Pentatonic 12th Minor - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Standard 5th Major - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Standard 5th Minor - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Standard 9th Major - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Standard 9th Minor - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Standard Octave Chromatic - C3 to C5 - Tenor.mp3",
+      "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3",
+    ].map((item) => ({ label: item.slice(20).slice(0, -23), value: item }))
+  },
+  baritone: {
+    scales: [
+      "nebula_scales/baritone/Arpeggio Octave Major - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Arpeggio Octave Minor - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Circular 5th Major - D3 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Circular 5th Minor - D3 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Circular 9th Major - C3 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Circular 9th Minor - C3 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Looper 1-Octave Chromatic - G2 to G3 - Baritone bottom.mp3",
+      "nebula_scales/baritone/Looper 1-Octave Chromatic - G3 to G4 - Baritone top.mp3",
+      "nebula_scales/baritone/Looper 2-Octave Chromatic - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Pentatonic 12th Major - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Pentatonic 12th Minor - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Standard 5th Major - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Standard 5th Minor - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Standard 9th Major - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Standard 9th Minor - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Standard Octave Chromatic - G2 to G4 - Baritone.mp3",
+      "nebula_scales/baritone/Unison - G2 to G4 - Baritone.mp3", 
+    ].map((item) => ({ label: item.slice(23).slice(0, -25), value: item }))
+  },
 };
 
 data.practice_arpeggios = [
