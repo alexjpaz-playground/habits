@@ -5,13 +5,17 @@ data.scales = {
   guided: {
     scales: [
       { label: "1. Bubble, VVV, Puffycheeks, Raspberry", value: "Bubble.mp3" },
-      { label: "2. Mum", value: "Mum.mp3" },
-      { label: "3. Bub", value: "Bub.mp3" },
-      { label: "4. Bup", value: "Bup.mp3" },
-      { label: "5. Nnng-EE-Mmm", value: "Mmm_Low.mp3" },
-      { label: "6. Gug", value: "Goo-Koo_Low.mp3" },
-      { label: "7. Siren", value: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3", }
-
+      { label: "2. Mum", value: "nebula_scales/baritone/Standard 5th Major - G2 to G4 - Baritone.mp3" },
+      { label: "3. Bub", value: "nebula_scales/tenor/Standard 5th Major - C3 to C5 - Tenor.mp3" },
+      { label: "4. Bup", value: "nebula_scales/baritone/Circular 5th Major - D3 to G4 - Baritone.mp3" },
+      { label: "5. Nnng-EE-Mmm", value: "nebula_scales/tenor/Circular 5th Major - G3 to C5 - Tenor.mp3" },
+      { label: "6. Gug", value: "nebula_scales/baritone/Looper 2-Octave Chromatic - G2 to G4 - Baritone.mp3" },
+      { label: "7. Goo/Koo", value: "nebula_scales/tenor/Looper 1-Octave Chromatic - C4 to C5 - Tenor top.mp3" },
+      { label: "8. Siren AH", value: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3" },
+      { label: "9. Siren EE", value: "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3" },
+      { label: "10. Hold Vowels", value: "nebula_scales/baritone/Unison - G2 to G4 - Baritone.mp3" },
+      { label: "11. Tenor Reach", value: "nebula_scales/tenor/Circular 9th Minor - F3 to C5 - Tenor.mp3" },
+      { label: "12. Cooldown - Bubble, VVV, Puffycheeks, Raspberry", value: "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3" },
     ]
   },
   tenor: {
