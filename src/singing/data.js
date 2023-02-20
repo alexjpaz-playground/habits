@@ -15,7 +15,9 @@ data.scales = {
       { label: "9. Siren Tenor", value: "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3" },
       { label: "10. Hold Vowels", value: "nebula_scales/baritone/Unison - G2 to G4 - Baritone.mp3" },
       { label: "11. Tenor Reach", value: "nebula_scales/tenor/Circular 9th Minor - F3 to C5 - Tenor.mp3" },
-      { label: "12. Cooldown - Bubble, VVV, Puffycheeks, Raspberry", value: "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3" },
+      { label: "12. Bass Hold", value: "nebula_scales/bass/Unison - E2 to E4 - Bass.mp3" },
+      { label: "13. Bass Gug", value: "nebula_scales/bass/Standard Octave Chromatic - E2 to E4 - Bass.mp3" },
+      { label: "14. Cooldown - Bubble, VVV, Puffycheeks, Raspberry", value: "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3" },
     ]
   },
   tenor: {
