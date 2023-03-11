@@ -17,7 +17,8 @@ data.scales = {
       { label: "11. Siren Baritone", value: "nebula_scales/baritone/Siren Octave Major - G2 to G4 - Baritone.mp3" },
       { label: "12. Siren Tenor", value: "nebula_scales/tenor/Siren Octave Major - C3 to C5 - Tenor.mp3" },
       { label: "13. Hold Vowels", value: "nebula_scales/baritone/Unison - G2 to G4 - Baritone.mp3" },
-      { label: "14. Cooldown - Bubble, VVV, Puffycheeks, Raspberry", value: "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3" },
+      { label: "14. Interval Training", value: "BaritonIntervalTraining.ogg" },
+      { label: "15. Cooldown - Bubble, VVV, Puffycheeks, Raspberry", value: "nebula_scales/tenor/Unison - C3 to C5 - Tenor.mp3" },
     ]
   },
   tenor: {
